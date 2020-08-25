@@ -27,7 +27,7 @@ class ExampleInstrumentedTest {
     fun coroutinesSuccessfullyRun() {
         val finalResult = City.getDemoCities().joinToString("\n")
 
-        // Perform click on RUN and wait for at least 1 seconds, then check if the result equals "Done."
+        // Perform click on RUN and wait for at least 1 seconds, then check the result
         onView(withId(R.id.run)).perform(click())
         onView(isRoot()).perform(waitFor(1100))
         onView(withId(R.id.result)).check(matches(withText(finalResult)))
