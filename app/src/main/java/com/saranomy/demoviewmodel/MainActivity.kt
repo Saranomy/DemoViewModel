@@ -18,8 +18,7 @@ class MainActivity : AppCompatActivity() {
         result = findViewById(R.id.result)
         run = findViewById(R.id.run)
 
-        cityViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(application)
-            .create(CityViewModel::class.java)
+        cityViewModel = ViewModelProvider(this).get(CityViewModel::class.java)
 
         // Observe the liveData (cities) whenever its setter or getter is called
         cityViewModel.cities.observe(this, Observer {
